@@ -1,4 +1,5 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { response } from 'express';
+import { EntityRepository, getRepository, Repository } from 'typeorm';
 
 import Transaction from '../models/Transaction';
 
@@ -10,9 +11,12 @@ interface Balance {
 
 @EntityRepository(Transaction)
 class TransactionsRepository extends Repository<Transaction> {
-  public async getBalance(): Promise<Balance> {
-    // TODO
-  }
+  // public async getBalance({ income, outcome, total }: Balance): Promise<Balance> {
+  //   const transactionRepository = getRepository(Transaction);
+
+  //   const { income, outcome} = transactionRepository.count
+
+  // }
 }
 
 export default TransactionsRepository;
